@@ -25,6 +25,16 @@ node_modules
 bower_components
 fishd.*
 
+SpecFlow/
+gcloud/
+gh/
+github-copilot/
+helix/
+karabiner/
+op/
+yabai/
+
+
 # Vim
 Session.vim
 .vim/bundle/
