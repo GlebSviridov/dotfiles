@@ -38,19 +38,20 @@ nnoremap <leader>l :action RecentLocations<CR>
 nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
 nnoremap <leader>s :action FileStructurePopup<CR>
 
+
 nmap [m <action>(MethodUp)
 nmap ]m <action>(MethodDown)
 nnoremap ]e :action GotoNextError<CR>
 nnoremap [e :action GotoPreviousError<CR>
 
-nmap <C-r> <action>(RefactoringMenu)
+nmap <C-rf> <action>(RefactoringMenu)
 nmap gi <action>(GotoImplementation)
 
 " search
 set incsearch
-nnoremap <c-/> :action FindInPath<CR>
-nnoremap <c-a> :action GotoAction<CR>
-nnoremap <c-f> :action GotoFile<CR>
+nnoremap <C-/> :action FindInPath<CR>
+nnoremap ga :action GotoAction<CR>
+nnoremap gf :action GotoFile<CR>
 nnoremap fu :action FindUsages<CR>
 nnoremap gs :action GotoSymbol<CR>
 nnoremap gc :action GotoClass<CR>
@@ -60,3 +61,9 @@ nnoremap gi :action GotoImplementation<CR>
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
+
+set multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
+map mn <A-n>
+map ms <A-x>
+map mp <A-p>
