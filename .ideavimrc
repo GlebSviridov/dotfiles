@@ -5,6 +5,7 @@ set surround
 set easymotion
 set visualbell
 set noerrorbells
+set scrolloff=8
 
 let mapleader = " "
 nnoremap \e :e ~/.ideavimrc<CR>
@@ -19,12 +20,14 @@ inoremap <C-k> <Esc>:m -2<CR>gi
 
 " system clipboard
 vmap <leader>y "+y
-vmap <leader>d "+d
-nmap <leader>y "+yy
+vmap <leader>d "_d
+nmap <leader>d "_d
+nmap <leader>y "+y
 nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
+
 
 nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
@@ -43,8 +46,11 @@ nnoremap <leader>s :action FileStructurePopup<CR>
 
 nmap [m <action>(MethodUp)
 nmap ]m <action>(MethodDown)
-nnoremap ]e :action GotoNextError<CR>
-nnoremap [e :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]c :action VcsShowNextChangeMarker<CR>
+nnoremap [c :action VcsShowPrevChangeMarker<CR>
+
 
 nmap <C-rf> <action>(RefactoringMenu)
 nmap gi <action>(GotoImplementation)
@@ -52,9 +58,9 @@ nnoremap gc :action GotoClass<CR>
 
 " search
 set incsearch
-nnoremap <leader>fg :action FindInPath<CR>
+nnoremap <leader>ff :action FindInPath<CR>
 nnoremap <leader>fa :action GotoAction<CR>
-nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>pf :action GotoFile<CR>
 nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>fs :action GotoSymbol<CR>
 
