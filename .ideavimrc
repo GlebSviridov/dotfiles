@@ -50,6 +50,8 @@ nnoremap ]d :action GotoNextError<CR>
 nnoremap [d :action GotoPreviousError<CR>
 nnoremap ]c :action VcsShowNextChangeMarker<CR>
 nnoremap [c :action VcsShowPrevChangeMarker<CR>
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
 
 
 nmap <C-rf> <action>(RefactoringMenu)
@@ -63,7 +65,7 @@ nnoremap <leader>fa :action GotoAction<CR>
 nnoremap <leader>pf :action GotoFile<CR>
 nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>fs :action GotoSymbol<CR>
-
+nnoremap <leader>fU :action HighlightUsagesInFile<CR>
 
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
