@@ -3,6 +3,8 @@ set idearefactormode=keep
 set ideajoin
 set surround
 set easymotion
+set visualbell
+set noerrorbells
 
 let mapleader = " "
 nnoremap \e :e ~/.ideavimrc<CR>
@@ -28,10 +30,10 @@ nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
 " actions
-nmap <leader>bd <action>(CloseEditor)
+nmap <leader>pv <action>(CloseEditor)
 nmap <leader>i <action>(Generate)
 nmap <leader>m <action>(Git.Menu)
-nmap <leader>/ <action>(ShowErrorDescription)
+nmap D <action>(ShowErrorDescription)
 
 nnoremap <leader>r :action RecentFiles<CR>
 nnoremap <leader>l :action RecentLocations<CR>
@@ -46,16 +48,15 @@ nnoremap [e :action GotoPreviousError<CR>
 
 nmap <C-rf> <action>(RefactoringMenu)
 nmap gi <action>(GotoImplementation)
+nnoremap gc :action GotoClass<CR>
 
 " search
 set incsearch
-nnoremap <C-/> :action FindInPath<CR>
-nnoremap ga :action GotoAction<CR>
-nnoremap gf :action GotoFile<CR>
-nnoremap fu :action FindUsages<CR>
-nnoremap gs :action GotoSymbol<CR>
-nnoremap gc :action GotoClass<CR>
-nnoremap gi :action GotoImplementation<CR>
+nnoremap <leader>fg :action FindInPath<CR>
+nnoremap <leader>fa :action GotoAction<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fu :action FindUsages<CR>
+nnoremap <leader>fs :action GotoSymbol<CR>
 
 
 set NERDTree
