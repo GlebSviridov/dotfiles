@@ -35,8 +35,8 @@ yabai -m config layout                       bsp
 yabai -m config window_gap                    5
 
 # apps to not manage (ignore)
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^System Settings$" manage=off
+app_titles = "(System Preferences|System Settings)"
+yabai -m rule -add app="${app_titles}" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^balenaEtcher$" manage=off
 yabai -m rule --add app="^Creative Cloud$" manage=off
@@ -53,9 +53,6 @@ yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add title="Preferences$" manage=off
 yabai -m rule --add title="^Reminders$" manage=off
 yabai -m rule --add title="^JetBrains Toolbox$" manage=off
-yabai -m rule --add app="^JetBrains Rider" manage=off
-yabai -m rule --add app="^JetBrains Rider" title=".*\[(.*)\].*" manage=on
-#yabai -m rule --add title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|History for*.|Push Commits to*.|Create New Branch*.|Create:*.|Add File to Git*.|Rollback*.|Move to*.|Change Signature*.|Conflicts*.|Update Project*.|Generate*.|Line Separators Warnings*.|Commit:*.|Merge Revisions for*.' manage=off
 yabai -m rule --add app="^Messages$" manage=off
 yabai -m rule --add app="^Photos$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
@@ -64,8 +61,20 @@ yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^CCleaner$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 
+#partialy managed
+jetbrains_apps="JetBrains Rider"
+#yabai -m rule --add app="${jetbrains_apps}" manage=off
+#yabai -m rule --add app="${jetbrains_apps}" title=".*\[(.*)\].*" manage=on
+#yabai -m rule --add app="^JetBrains Rider" manage=off
+#yabai -m rule --add app="^JetBrains Rider" title=".*\[(.*)\].*" manage=on
+yabai -m rule --add title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|History for*.|Push Commits to*.|Create New Branch*.|Create:*.|Add File to Git*.|Rollback*.|Move to*.|Change Signature*.|Conflicts*.|Update Project*.|Generate*.|Line Separators Warnings*.|Commit:*.|Merge Revisions for*.' manage=off
+
+#Actions
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
-yabai -m signal --add event=window_created action="zsh ~/.config/yabai/application-activated.zsh"
+
+#yabai -m signal --add event=window_created action="zsh ~/.config/yabai/application-activated.zsh"
+
+yabai -m signal --add label=stack_same_name_applications event=window_created action="bash ~/.config/yabai/stack_same_applications.zsh"
 
 echo "yabai configuration loaded.."
