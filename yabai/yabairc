@@ -37,6 +37,9 @@ yabai -m config window_gap                    5
 # apps to not manage (ignore)
 app_titles = "(System Preferences|System Settings)"
 yabai -m rule -add app="${app_titles}" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^balenaEtcher$" manage=off
 yabai -m rule --add app="^Creative Cloud$" manage=off
