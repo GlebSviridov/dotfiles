@@ -6,6 +6,7 @@ set easymotion
 set visualbell
 set noerrorbells
 set scrolloff=8
+set ignorecase smartcase
 
 let mapleader = " "
 nnoremap \e :e ~/.ideavimrc<CR>
@@ -56,6 +57,7 @@ nnoremap <C-i> :action Forward<CR>
 
 nmap <C-rf> <action>(RefactoringMenu)
 nmap gi <action>(GotoImplementation)
+nmap gD <action>(GotoSuperMethod)
 nnoremap gc :action GotoClass<CR>
 
 " search

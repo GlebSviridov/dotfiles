@@ -67,7 +67,7 @@ jetbrains_apps="JetBrains Rider"
 #yabai -m rule --add app="${jetbrains_apps}" title=".*\[(.*)\].*" manage=on
 #yabai -m rule --add app="^JetBrains Rider" manage=off
 #yabai -m rule --add app="^JetBrains Rider" title=".*\[(.*)\].*" manage=on
-yabai -m rule --add title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|History for*.|Push Commits to*.|Create New Branch*.|Create:*.|Add File to Git*.|Rollback*.|Move to*.|Change Signature*.|Conflicts*.|Update Project*.|Generate*.|Line Separators Warnings*.|Commit:*.|Merge Revisions for*.' manage=off
+yabai -m rule --add app="^JetBrains Rider" title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|History for*.|Push Commits to*.|Create New Branch*.|Create:*.|Add File to Git*.|Rollback*.|Move to*.|Change Signature*.|Conflicts*.|Update Project*.|Generate*.|Line Separators Warnings*.|Commit:*.|Merge Revisions for*.' manage=off
 
 #Actions
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
