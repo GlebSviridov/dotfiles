@@ -1,6 +1,6 @@
 #! /usr/bin/zsh
 
-whitelisted_applications='(Preview|Code|Finder|JetBrains Rider|WebStorm)'
+whitelisted_applications='(Google Chrome|Preview|Code|Finder|JetBrains Rider|WebStorm|IntelliJ IDEA)'
 
 current_window=$(yabai -m query --windows --window "$YABAI_WINDOW_ID")
 current_window_name=$(echo "$current_window" | jq .app)

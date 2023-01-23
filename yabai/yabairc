@@ -28,20 +28,25 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-#yabai -m config top_padding                  15
-#yabai -m config bottom_padding               15
-#yabai -m config left_padding                 15
-#yabai -m config right_padding                15
-yabai -m config window_gap                    5
+#yabai -m config top_padding                  3
+#yabai -m config bottom_padding               3
+#yabai -m config left_padding                 3
+#yabai -m config right_padding                3
+yabai -m config window_gap                   5
+
+# Web browsers
+yabai -m rule --add app="^Google Chrome|Firefox$" space=1
 
 # apps to not manage (ignore)
-app_titles = "(System Preferences|System Settings)"
+app_titles = "^(System Preferences|System Settings)$"
 yabai -m rule -add app="${app_titles}" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
 
 yabai -m rule --add app="^Archive Utility$" manage=off
-yabai -m rule --add app="^balenaEtcher$" manage=off
 yabai -m rule --add app="^Creative Cloud$" manage=off
 yabai -m rule --add app="^Logi Options+$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
@@ -62,7 +67,7 @@ yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^Dictionary$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^CCleaner$" manage=off
-yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^GitHub Desktop$" manage=off
 
 #partialy managed
 jetbrains_apps="JetBrains Rider"
@@ -76,7 +81,6 @@ yabai -m rule --add app="^JetBrains Rider" title='.*Welcome*.|Checkout*.|.*Confi
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
-#yabai -m signal --add event=window_created action="zsh ~/.config/yabai/application-activated.zsh"
 
 yabai -m signal --add label=stack_same_name_applications event=window_created action="bash ~/.config/yabai/stack_same_applications.zsh"
 
