@@ -55,7 +55,7 @@ nnoremap <C-o> :action Back<CR>
 nnoremap <C-i> :action Forward<CR>
 
 
-nmap <C-rf> <action>(RefactoringMenu)
+nmap <C-r>f <action>(RefactoringMenu)
 nmap gi <action>(GotoImplementation)
 nmap gD <action>(GotoSuperMethod)
 nnoremap gc :action GotoClass<CR>
