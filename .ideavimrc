@@ -69,6 +69,10 @@ nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>fs :action GotoSymbol<CR>
 nnoremap <leader>fU :action HighlightUsagesInFile<CR>
 
+" ai
+nnoremap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
+vmap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
+
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
