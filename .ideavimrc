@@ -1,10 +1,10 @@
+" default settings
 set surround
-Plug 'tpope/vim-surround'
-
 set which-key
 let g:WhichKey_ShowVimActions = "true"
 
 set number relativenumber
+set incsearch
 set idearefactormode=keep
 set ideajoin
 set easymotion
@@ -14,15 +14,82 @@ set scrolloff=8
 set ignorecase smartcase
 
 let mapleader = " "
-nnoremap \e :e ~/.ideavimrc<CR>
-nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
-nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 
-" move lines up/down
-nnoremap <C-j> :m +1<CR>
-nnoremap <C-k> :m -2<CR>
-inoremap <C-j> <Esc>:m +1<CR>gi
-inoremap <C-k> <Esc>:m -2<CR>gi
+" multiple cursors
+set multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
+map mn <A-n>
+map ms <A-x>
+map mp <A-p>
+
+" NERDTree
+set NERDTree
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
+
+
+" key mappings
+" ideavimrc
+nmap \e :e ~/.ideavimrc<CR>
+nmap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+" finding
+nmap <leader>ff <action>(GotoFile)
+nmap <leader>fw <action>(FindInPath)
+nmap <leader>fc viw <action>(FindInPath)
+nmap <leader>fr :reg<CR>
+nmap <leader>fo <action>(RecentFiles)
+nmap <leader>fa <action>(GotoAction)
+nmap <leader>fu <action>(FindUsages)
+nmap <leader>fU <action>(HighlightUsagesInFile)
+nmap <leader>fl <action>(RecentLocations)
+
+" go ...
+nmap gI <action>(GotoImplementation)
+nmap gd <action>(GotoDeclaration)
+nmap gD <action>(GotoTypeDeclaration)
+nmap gs <action>(GotoSuperMethod)
+
+"terminal"
+nmap <leader>th :action Terminal.OpenInTerminal<CR>
+
+" tabs/buffers
+nmap <leader>c <action>(CloseEditor)
+nmap [b <action>(PreviousTab)
+nmap ]b <action>(NextTab)
+nmap <leader>bc <action>(CloseAllEditorsButActive)
+nmap <leader>bC <action>(CloseAllEditors)
+
+" git
+nmap <leader>gg <action>(Git.Menu)
+nmap <leader>gb <action>(Git.Branches)
+nmap <leader>gh <action>(Vcs.ShowTabbedFileHistory)
+
+" lsp/code editing
+nmap <leader>ls <action>(GotoSymbol)
+nmap <leader>la <action>(ShowIntentionActions)
+nmap <leader>lS <action>(FileStructurePopup)
+nmap <leader>lr <action>(RenameElement)
+nmap <leader>lR <action>(RefactoringMenu)
+nmap <C-r>f <action>(RefactoringMenu)
+nmap <leader>lh <action>(ParameterInfo)
+nmap <C-n> <action>(ParameterInfo.GoToPreviousSignature)
+nmap D <action>(ShowErrorDescription)
+nmap <leader>li <action>(Generate)
+
+" navigation
+nmap [m <action>(MethodUp)
+nmap ]m <action>(MethodDown)
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]c :action VcsShowNextChangeMarker<CR>
+nnoremap [c :action VcsShowPrevChangeMarker<CR>
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
+
+" ai
+nnoremap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
+vmap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
 
 " system clipboard
 vmap <leader>y "+y
@@ -33,59 +100,3 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
-
-
-nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
-nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
-
-" actions
-nmap <leader>pv <action>(CloseEditor)
-nmap <leader>i <action>(Generate)
-nmap <leader>m <action>(Git.Menu)
-nmap D <action>(ShowErrorDescription)
-
-nnoremap <leader>r :action RecentFiles<CR>
-nnoremap <leader>l :action RecentLocations<CR>
-nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
-nnoremap <leader>s :action FileStructurePopup<CR>
-
-
-nmap [m <action>(MethodUp)
-nmap ]m <action>(MethodDown)
-nnoremap ]d :action GotoNextError<CR>
-nnoremap [d :action GotoPreviousError<CR>
-nnoremap ]c :action VcsShowNextChangeMarker<CR>
-nnoremap [c :action VcsShowPrevChangeMarker<CR>
-nnoremap <C-o> :action Back<CR>
-nnoremap <C-i> :action Forward<CR>
-
-
-nmap <C-r>f <action>(RefactoringMenu)
-nmap gi <action>(GotoImplementation)
-nmap gD <action>(GotoSuperMethod)
-nnoremap gc :action GotoClass<CR>
-
-" search
-set incsearch
-nnoremap <leader>ff :action FindInPath<CR>
-nnoremap <leader>fa :action GotoAction<CR>
-nnoremap <leader>pf :action GotoFile<CR>
-nnoremap <leader>fu :action FindUsages<CR>
-nnoremap <leader>fs :action GotoSymbol<CR>
-nnoremap <leader>fU :action HighlightUsagesInFile<CR>
-
-" ai
-nnoremap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
-vmap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
-
-
-set NERDTree
-let g:NERDTreeMapActivateNode='l'
-let g:NERDTreeMapJumpParent='h'
-
-" multiple cursors
-set multiple-cursors
-Plug 'terryma/vim-multiple-cursors'
-map mn <A-n>
-map ms <A-x>
-map mp <A-p>
