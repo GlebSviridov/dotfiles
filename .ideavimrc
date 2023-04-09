@@ -1,7 +1,12 @@
+set surround
+Plug 'tpope/vim-surround'
+
+set which-key
+let g:WhichKey_ShowVimActions = "true"
+
 set number relativenumber
 set idearefactormode=keep
 set ideajoin
-set surround
 set easymotion
 set visualbell
 set noerrorbells
@@ -73,10 +78,12 @@ nnoremap <leader>fU :action HighlightUsagesInFile<CR>
 nnoremap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
 vmap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
 
+
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
 
+" multiple cursors
 set multiple-cursors
 Plug 'terryma/vim-multiple-cursors'
 map mn <A-n>

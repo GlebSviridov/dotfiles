@@ -68,6 +68,7 @@ yabai -m rule --add app="^Dictionary$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^CCleaner$" manage=off
 yabai -m rule --add app="^GitHub Desktop$" manage=off
+yabai -m rule --add app="^League of Legends$" manage=off
 
 #partialy managed
 jetbrains_apps="JetBrains Rider"
