@@ -28,6 +28,7 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
+yabai -m space --display 1 --layout          stack
 #yabai -m config top_padding                  3
 #yabai -m config bottom_padding               3
 #yabai -m config left_padding                 3
@@ -52,6 +53,7 @@ yabai -m rule --add app="^Logi Options+$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
+yabai -m rule --add app="^Spark$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Path Finder$" manage=off
