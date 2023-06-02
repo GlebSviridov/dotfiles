@@ -74,6 +74,9 @@ nmap <leader>gb <action>(Git.Branches)
 nmap <leader>gh <action>(Vcs.RollbackChangedLines)
 nmap <leader>gc <action>(Vcs.ShowTabbedFileHistory)
 nmap <leader>gp <action>(VcsShowCurrentChangeMarker)
+nmap ]g <action>(VcsShowNextChangeMarker)
+nmap [g <action>(VcsShowPrevChangeMarker)
+
 
 " lsp/code editing
 nmap <leader>lG <action>(GotoSymbol)
@@ -86,6 +89,7 @@ nmap <leader>lR <action>(RefactoringMenu)
 nmap <C-r>f <action>(RefactoringMenu)
 nmap <leader>lh <action>(ParameterInfo)
 nmap <C-n> <action>(ParameterInfo.GoToPreviousSignature)
+nmap <leader>lD <action>(Rider.ProblemsView.ErrorsInSolution)
 nmap D <action>(ShowErrorDescription)
 nmap <leader>li <action>(Generate)
 nmap <leader>lf <action>(ReformatCode)
