@@ -2,6 +2,7 @@
 set surround
 set which-key
 let g:WhichKey_ShowVimActions = "true"
+set notimeout
 
 set number relativenumber
 set incsearch
@@ -46,8 +47,8 @@ nmap <leader>fc viw <action>(FindInPath)
 nmap <leader>fr :reg<CR>
 nmap <leader>fo <action>(RecentFiles)
 nmap <leader>fa <action>(GotoAction)
-nmap <leader>fu <action>(FindUsages)
-nmap <leader>fU <action>(HighlightUsagesInFile)
+nmap <leader>fu <action>(ShowUsages)
+nmap <leader>fU <action>(FindUsages)
 nmap <leader>fl <action>(RecentLocations)
 nmap <leader>fd <action>(Rider.ProblemsView.ErrorsInSolution)
 
