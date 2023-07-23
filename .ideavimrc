@@ -40,6 +40,12 @@ nmap <leader>e :NERDTree<CR>
 nmap <leader>/ <action>(CommentByLineComment)
 vmap <leader>/ <action>(CommentByLineComment)
 
+" window navigation"
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
 " finding
 nmap <leader>ff <action>(GotoFile)
 nmap <leader>fw <action>(FindInPath)
@@ -95,16 +101,25 @@ nmap D <action>(ShowErrorDescription)
 nmap <leader>li <action>(Generate)
 nmap <leader>lf <action>(ReformatCode)
 vmap <leader>lf <action>(ReformatCode)
+nmap <leader>lm <action>(Move)
 
 " navigation
 nmap [m <action>(MethodUp)
 nmap ]m <action>(MethodDown)
 nnoremap ]d :action GotoNextError<CR>
 nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]D :action ReSharperGotoNextErrorInSolution<CR>
+nnoremap [D :action ReSharperGotoPrevErrorInSolution<CR>
 nnoremap ]c :action VcsShowNextChangeMarker<CR>
 nnoremap [c :action VcsShowPrevChangeMarker<CR>
 nnoremap <C-o> :action Back<CR>
 nnoremap <C-i> :action Forward<CR>
+
+" debugging
+nmap <leader>db :action ToggleLineBreakpoint<CR>
+nmap <leader>dc :action Debug.Breakpoint.View<CR>
+nmap <leader>dd :action ChooseDebugConfiguration<CR>
+nmap <leader>dr :action ChooseRunConfiguration<CR>
 
 " ai
 nnoremap <leader>qa :action com.github.simiacryptus.aicoder.EditorMenu<CR>
