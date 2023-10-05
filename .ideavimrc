@@ -4,11 +4,19 @@ set which-key
 let g:WhichKey_ShowVimActions = "true"
 set notimeout
 
+
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = "300"
+
+set sneak
+
 set number relativenumber
 set incsearch
 set idearefactormode=keep
 set ideajoin
-set easymotion
 set visualbell
 set noerrorbells
 set scrolloff=8
@@ -56,7 +64,6 @@ nmap <leader>fa <action>(GotoAction)
 nmap <leader>fu <action>(ShowUsages)
 nmap <leader>fU <action>(FindUsages)
 nmap <leader>fl <action>(RecentLocations)
-nmap <leader>fd <action>(Rider.ProblemsView.ErrorsInSolution)
 
 " go ...
 nmap gI <action>(GotoImplementation)
@@ -102,6 +109,8 @@ nmap <leader>li <action>(Generate)
 nmap <leader>lf <action>(ReformatCode)
 vmap <leader>lf <action>(ReformatCode)
 nmap <leader>lm <action>(Move)
+nmap <leader>fd <action>(Rider.ProblemsView.ErrorsInSolution)
+nmap <leader>lu <action>(HighlightUsagesInFile)
 
 " navigation
 nmap [m <action>(MethodUp)
