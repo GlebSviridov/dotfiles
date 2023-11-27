@@ -4,6 +4,7 @@ set which-key
 let g:WhichKey_ShowVimActions = "true"
 set notimeout
 
+set sneak
 
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
@@ -11,7 +12,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = "300"
 
-set sneak
 
 set number relativenumber
 set incsearch
@@ -44,6 +44,7 @@ nmap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
 " general
 nmap <leader>w <action>(SaveAll)
+nmap <C-s> <action>(SaveAll)
 nmap <leader>e :NERDTree<CR>
 nmap <leader>/ <action>(CommentByLineComment)
 vmap <leader>/ <action>(CommentByLineComment)
@@ -56,14 +57,16 @@ nmap <C-l> <C-w>l
 
 " finding
 nmap <leader>ff <action>(GotoFile)
-nmap <leader>fw <action>(FindInPath)
-nmap <leader>fc viw <action>(FindInPath)
-nmap <leader>fr :reg<CR>
-nmap <leader>fo <action>(RecentFiles)
-nmap <leader>fa <action>(GotoAction)
-nmap <leader>fu <action>(ShowUsages)
-nmap <leader>fU <action>(FindUsages)
-nmap <leader>fl <action>(RecentLocations)
+nmap <leader>fp <action>(RecentProjectListGroup)
+nmap <leader>sw <action>(FindInPath)
+nmap <leader>sc viw <action>(FindInPath)
+nmap <leader>s" :reg<CR>
+nmap <leader>fr <action>(RecentFiles)
+nmap <leader>sa <action>(GotoAction)
+nmap <leader>su <action>(ShowUsages)
+nmap <leader>xu <action>(FindUsages)
+nmap <leader>sl <action>(RecentLocations)
+nmap <leader>sm <action>(ShowBookmarks)
 
 " go ...
 nmap gI <action>(GotoImplementation)
@@ -73,44 +76,51 @@ nmap gD <action>(GotoTypeDeclaration)
 nmap gs <action>(GotoSuperMethod)
 
 "terminal"
-nmap <leader>th :action Terminal.OpenInTerminal<CR>
+nmap <leader>ft :action Terminal.OpenInTerminal<CR>
 
 " tabs/buffers
-nmap <leader>c <action>(CloseEditor)
+nmap <leader>bc <action>(CloseEditor)
+nmap <leader>bd <action>(CloseEditor)
 nmap [b <action>(PreviousTab)
 nmap ]b <action>(NextTab)
-nmap <leader>bc <action>(CloseAllEditorsButActive)
-nmap <leader>bC <action>(CloseAllEditors)
+nmap H <action>(PreviousTab)
+nmap L <action>(NextTab)
+nmap <leader>bD <action>(CloseAllEditorsButActive)
+nmap <leader>bC <action>(CloseAllEditorsButActive)
 
 " git
 nmap <leader>gg <action>(Git.Menu)
 nmap <leader>gb <action>(Git.Branches)
-nmap <leader>gh <action>(Vcs.RollbackChangedLines)
+nmap <leader>ghr <action>(Vcs.RollbackChangedLines)
 nmap <leader>gc <action>(Vcs.ShowTabbedFileHistory)
-nmap <leader>gp <action>(VcsShowCurrentChangeMarker)
+nmap <leader>ghp <action>(VcsShowCurrentChangeMarker)
 nmap ]g <action>(VcsShowNextChangeMarker)
 nmap [g <action>(VcsShowPrevChangeMarker)
 
-
 " lsp/code editing
-nmap <leader>lG <action>(GotoSymbol)
-nmap <leader>lg <action>(GotoSymbol)
-nmap <leader>ls <action>(FileStructurePopup)
-nmap <leader>la <action>(ShowIntentionActions)
-nmap <leader>lS <action>(ActivateStructureToolWindow)
-nmap <leader>lr <action>(RenameElement)
-nmap <leader>lR <action>(RefactoringMenu)
+nmap <leader>cG <action>(GotoSymbol)
+nmap <leader>cg <action>(GotoSymbol)
+nmap <leader>cS <action>(GotoSymbol)
+nmap <leader>cs <action>(FileStructurePopup)
+nmap <leader>ca <action>(ShowIntentionActions)
+nmap <leader>xs <action>(ActivateStructureToolWindow)
+nmap <leader>cr <action>(RenameElement)
+nmap <leader>cR <action>(RefactoringMenu)
 nmap <C-r>f <action>(RefactoringMenu)
-nmap <leader>lh <action>(ParameterInfo)
-nmap <C-n> <action>(ParameterInfo.GoToPreviousSignature)
-nmap <leader>lD <action>(Rider.ProblemsView.ErrorsInSolution)
+nmap gK <action>(ParameterInfo)
+nmap gk <action>(ParameterInfo)
+nmap <C-k> <action>(ParameterInfo)
+imap <C-k> <action>(ParameterInfo)
+nmap <C-p> <action>(ParameterInfo.GoToPreviousSignature)
+imap <C-p> <action>(ParameterInfo.GoToPreviousSignature)
+nmap <leader>xd <action>(Rider.ProblemsView.ErrorsInSolution)
 nmap D <action>(ShowErrorDescription)
-nmap <leader>li <action>(Generate)
-nmap <leader>lf <action>(ReformatCode)
-vmap <leader>lf <action>(ReformatCode)
-nmap <leader>lm <action>(Move)
-nmap <leader>fd <action>(Rider.ProblemsView.ErrorsInSolution)
-nmap <leader>lu <action>(HighlightUsagesInFile)
+nmap <leader>ci <action>(Generate)
+nmap <leader>cf <action>(ReformatCode)
+vmap <leader>cf <action>(ReformatCode)
+nmap <leader>cm <action>(Move)
+nmap <leader>cu <action>(HighlightUsagesInFile)
+nmap <leader>fn <action>(NewScratchFile)
 
 " navigation
 nmap [m <action>(MethodUp)
