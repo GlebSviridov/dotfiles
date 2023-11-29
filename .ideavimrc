@@ -3,9 +3,9 @@ set surround
 set which-key
 let g:WhichKey_ShowVimActions = "true"
 set notimeout
-
+set argtextobj
 set sneak
-
+set exchange
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
@@ -98,29 +98,31 @@ nmap ]g <action>(VcsShowNextChangeMarker)
 nmap [g <action>(VcsShowPrevChangeMarker)
 
 " lsp/code editing
-nmap <leader>cG <action>(GotoSymbol)
 nmap <leader>cg <action>(GotoSymbol)
-nmap <leader>cS <action>(GotoSymbol)
-nmap <leader>cs <action>(FileStructurePopup)
-nmap <leader>ca <action>(ShowIntentionActions)
+nmap <leader>sS <action>(GotoSymbol)
+nmap <leader>ss <action>(FileStructurePopup)
 nmap <leader>xs <action>(ActivateStructureToolWindow)
+
+nmap <leader>ca <action>(ShowIntentionActions)
 nmap <leader>cr <action>(RenameElement)
 nmap <leader>cR <action>(RefactoringMenu)
 nmap <C-r>f <action>(RefactoringMenu)
+nmap <leader>ci <action>(Generate)
+nmap <leader>cf <action>(ReformatCode)
+vmap <leader>cf <action>(ReformatCode)
+nmap <leader>cm <action>(Move)
+nmap <leader>fn <action>(NewScratchFile)
+
 nmap gK <action>(ParameterInfo)
 nmap gk <action>(ParameterInfo)
 nmap <C-k> <action>(ParameterInfo)
 imap <C-k> <action>(ParameterInfo)
 nmap <C-p> <action>(ParameterInfo.GoToPreviousSignature)
 imap <C-p> <action>(ParameterInfo.GoToPreviousSignature)
+nmap <leader>cu <action>(HighlightUsagesInFile)
+
 nmap <leader>xd <action>(Rider.ProblemsView.ErrorsInSolution)
 nmap D <action>(ShowErrorDescription)
-nmap <leader>ci <action>(Generate)
-nmap <leader>cf <action>(ReformatCode)
-vmap <leader>cf <action>(ReformatCode)
-nmap <leader>cm <action>(Move)
-nmap <leader>cu <action>(HighlightUsagesInFile)
-nmap <leader>fn <action>(NewScratchFile)
 
 " navigation
 nmap [m <action>(MethodUp)
