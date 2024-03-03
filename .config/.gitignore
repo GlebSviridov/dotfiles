@@ -32,6 +32,7 @@ github-copilot/
 helix/
 karabiner/
 op/
+yabai/
 
 
 # Vim
@@ -76,13 +77,3 @@ Pods/
 .idea/*
 jgit/*
 
-.config/.csharprepl
-.config/JetBrains
-.config/Kreya
-.config/envman
-.config/flipperdevices.com
-.config/gitui
-.config/iterm2
-.config/nvim
-.config/raycast
-.config/zed

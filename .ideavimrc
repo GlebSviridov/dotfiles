@@ -65,7 +65,7 @@ nmap <leader>fr <action>(RecentFiles)
 nmap <leader>sa <action>(GotoAction)
 nmap <leader>su <action>(ShowUsages)
 nmap <leader>xu <action>(FindUsages)
-nmap <leader>sl <action>(RecentLocations)
+nmap <leader>fl <action>(RecentLocations)
 nmap <leader>sm <action>(ShowBookmarks)
 
 " go ...
@@ -81,6 +81,7 @@ nmap <leader>ft :action Terminal.OpenInTerminal<CR>
 " tabs/buffers
 nmap <leader>bc <action>(CloseEditor)
 nmap <leader>bd <action>(CloseEditor)
+nmap X <action>(CloseEditor)
 nmap [b <action>(PreviousTab)
 nmap ]b <action>(NextTab)
 nmap H <action>(PreviousTab)
@@ -94,6 +95,8 @@ nmap <leader>gb <action>(Git.Branches)
 nmap <leader>ghr <action>(Vcs.RollbackChangedLines)
 nmap <leader>gc <action>(Vcs.ShowTabbedFileHistory)
 nmap <leader>ghp <action>(VcsShowCurrentChangeMarker)
+nmap <leader>gp <action>(Git.Pull)
+nmap <leader>gP <action>(Vcs.Push)
 nmap ]g <action>(VcsShowNextChangeMarker)
 nmap [g <action>(VcsShowPrevChangeMarker)
 
