@@ -86,3 +86,4 @@ jgit/*
 .config/nvim
 .config/raycast
 .config/zed
+.config/tmux/plugins
