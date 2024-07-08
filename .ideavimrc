@@ -5,12 +5,13 @@ let g:WhichKey_ShowVimActions = "true"
 set notimeout
 set argtextobj
 set sneak
+" cx{motion} or X in visual mode
 set exchange
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 Plug 'machakann/vim-highlightedyank'
-let g:highlightedyank_highlight_duration = "300"
+let g:higlhightedyank_highlight_duration = "300"
 
 
 set number relativenumber
@@ -74,6 +75,7 @@ nmap gi <action>(GotoImplementation)
 nmap gd <action>(GotoDeclaration)
 nmap gD <action>(GotoTypeDeclaration)
 nmap gs <action>(GotoSuperMethod)
+nmap gr <action>(ShowUsages)
 
 "terminal"
 nmap <leader>ft :action Terminal.OpenInTerminal<CR>
@@ -82,6 +84,7 @@ nmap <leader>ft :action Terminal.OpenInTerminal<CR>
 nmap <leader>bc <action>(CloseEditor)
 nmap <leader>bd <action>(CloseEditor)
 nmap X <action>(CloseEditor)
+nmap <leader>X <action>(ReopenClosedTab)
 nmap [b <action>(PreviousTab)
 nmap ]b <action>(NextTab)
 nmap H <action>(PreviousTab)
