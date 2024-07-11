@@ -83,7 +83,5 @@ jgit/*
 .config/flipperdevices.com
 .config/gitui
 .config/iterm2
-.config/nvim
 .config/raycast
 .config/zed
-.config/tmux/plugins
