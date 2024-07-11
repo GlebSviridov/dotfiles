@@ -18,8 +18,5 @@ lasso-dev-264521:us-central1:sql-main-dev=tcp:1433,\
 lasso-prod-264521:us-central1:sql-main-replica=tcp:1444,\
 lasso-prod-264521:us-central1:sql-main=tcp:1555"
 
-alias myNoSql="ssh -L 9876:192.168.20.80:5125 youhodler@20.234.176.95 -p 22"
-alias testShell="ssh -L 6421:192.168.20.80:6421 -L 5123:localhost:5123 -L 5125:localhost:5125 -L 5341:192.168.20.80:5341 -L 5009:10.240.1.50:5009 -L 8001:localhost:8001 youhodler@20.234.176.95 -p 22"
-alias testShell2="ssh -L 6421:192.168.20.80:6421 -L 5125:localhost:5125 -L 5125:192.168.20.80:5125 -L 5341:192.168.20.80:5341 -L 5009:10.240.1.50:5009 youhodler@20.234.176.95 -p 22"
 alias nugetLocal="dotnet pack -o ~/Work/local/packages"
 
