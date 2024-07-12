@@ -85,3 +85,4 @@ jgit/*
 .config/iterm2
 .config/raycast
 .config/zed
+.config/nvim
