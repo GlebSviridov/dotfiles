@@ -10,6 +10,9 @@ set exchange
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
+" keep english for normal mode always
+set keep-english-in-normal[-and-restore-in-insert]
+
 Plug 'machakann/vim-highlightedyank'
 let g:higlhightedyank_highlight_duration = "300"
 
