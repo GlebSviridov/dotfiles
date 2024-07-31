@@ -5,6 +5,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Added by Toolbox App
 export PATH="$PATH:/Users/glebsviridov/Library/Application Support/JetBrains/Toolbox/scripts"
 export PATH="$PATH:/Users/glebsviridov/.dotnet/tools"
+export BAT_THEME="Visual Studio Dark+"
 
 alias vim="/opt/homebrew/bin/nvim"
 
