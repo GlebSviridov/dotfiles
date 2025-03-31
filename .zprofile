@@ -6,6 +6,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$PATH:/Users/glebsviridov/Library/Application Support/JetBrains/Toolbox/scripts"
 export PATH="$PATH:/Users/glebsviridov/.dotnet/tools"
 export BAT_THEME="Visual Studio Dark+"
+export RUST_ENVIRONMENT="local"
 
 alias vim="/opt/homebrew/bin/nvim"
 
@@ -21,3 +22,4 @@ lasso-prod-264521:us-central1:sql-main=tcp:1555"
 
 alias nugetLocal="dotnet pack -o ~/Work/local/packages"
 
+alias tel="telepresence quit && telepresence connect"
