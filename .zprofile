@@ -23,3 +23,7 @@ lasso-prod-264521:us-central1:sql-main=tcp:1555"
 alias nugetLocal="dotnet pack -o ~/Work/local/packages"
 
 alias tel="telepresence quit && telepresence connect"
+
+alias ss="atuin search -i"
+
+alias lg="lazygit";

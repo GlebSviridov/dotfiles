@@ -131,3 +131,5 @@ if [ -f '/Users/glebsviridov/google-cloud-sdk/completion.zsh.inc' ]; then . '/Us
 
 # setup fzf
 eval "$(fzf --zsh)"
+export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
+eval "$(atuin init zsh)"
