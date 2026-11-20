@@ -108,6 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias pr-digest="$HOME/.local/bin/pr-digest"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -133,3 +135,5 @@ if [ -f '/Users/glebsviridov/google-cloud-sdk/completion.zsh.inc' ]; then . '/Us
 eval "$(fzf --zsh)"
 export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
 eval "$(atuin init zsh)"
+export PATH="$PATH:$HOME/.dotnet/tools"
+alias jl='pbpaste | jless'
